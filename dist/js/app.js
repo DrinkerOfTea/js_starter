@@ -176,15 +176,15 @@ var _Main = require('./Main');
 
 var _Main2 = _interopRequireDefault(_Main);
 
-var _Home = require('./components/Home');
+var _Home = require('./pages/Home');
 
 var _Home2 = _interopRequireDefault(_Home);
 
-var _Page = require('./components/Page1');
+var _Page = require('./pages/Page1');
 
 var _Page2 = _interopRequireDefault(_Page);
 
-var _Page3 = require('./components/Page2');
+var _Page3 = require('./pages/Page2');
 
 var _Page4 = _interopRequireDefault(_Page3);
 
@@ -212,7 +212,7 @@ _react2.default.createElement(
     )
 ), document.getElementById('app'));
 
-},{"./Main":1,"./components/Home":4,"./components/Page1":5,"./components/Page2":6,"react":332,"react-dom":108,"react-router":136,"react-tap-event-plugin":170}],4:[function(require,module,exports){
+},{"./Main":1,"./pages/Home":4,"./pages/Page1":5,"./pages/Page2":6,"react":332,"react-dom":108,"react-router":136,"react-tap-event-plugin":170}],4:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {

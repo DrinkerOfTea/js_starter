@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import { Router, Route, hashHistory, IndexRoute } from 'react-router'
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import Main from './Main'; // Our custom react component
-import Home from './components/Home';
-import Page1 from './components/Page1';
-import Page2 from './components/Page2';
+import Home from './pages/Home';
+import Page1 from './pages/Page1';
+import Page2 from './pages/Page2';
 
 //Needed for onTouchTap
 //Can go away when react 1.0 release
