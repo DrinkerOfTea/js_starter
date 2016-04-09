@@ -34,7 +34,7 @@ class Page1 extends React.Component {
     render() {
         const standardActions = (
             <FlatButton
-                label="Okey"
+                label="Ok"
                 secondary={true}
                 onTouchTap={this.handleRequestClose}
                 />

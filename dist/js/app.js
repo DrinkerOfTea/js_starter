@@ -63,7 +63,7 @@ var styles = {
 
 var muiTheme = (0, _getMuiTheme2.default)({
     palette: {
-        accent1Color: _colors.deepOrange500
+        accent1Color: _colors.deepPurple500
     }
 });
 
@@ -235,6 +235,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 * Home page: Replace this with a new home page
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 */
 
+var styles = {
+    testArea: {
+        height: 500,
+        width: 500
+    }
+};
+
 var Home = function (_React$Component) {
     _inherits(Home, _React$Component);
 
@@ -258,8 +265,9 @@ var Home = function (_React$Component) {
                 _react2.default.createElement(
                     "p",
                     null,
-                    "This is the home page"
-                )
+                    "Components are great"
+                ),
+                _react2.default.createElement("div", { style: styles.testArea })
             );
         }
     }]);
@@ -339,7 +347,7 @@ var Page1 = function (_React$Component) {
         key: 'render',
         value: function render() {
             var standardActions = _react2.default.createElement(_flatButton2.default, {
-                label: 'Okey',
+                label: 'Ok',
                 secondary: true,
                 onTouchTap: this.handleRequestClose
             });

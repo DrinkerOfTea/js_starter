@@ -4,13 +4,26 @@
 
 import React from 'react';
 
+const styles = {
+    testArea: {
+        height: 500,
+        width: 500
+    },
+};
+
 class Home extends React.Component {
 
     render() {
         return (
             <div className="home">
                 <h1>Welcome to Starter App</h1>
-                <p>This is the home page</p>
+                <p>Components are great</p>
+
+                <div style={styles.testArea}>
+
+                </div>
+
+
             </div>
         );
     }

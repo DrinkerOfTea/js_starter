@@ -3,7 +3,7 @@
  */
 
 import React from 'react';
-import {deepOrange500} from 'material-ui/lib/styles/colors';
+import {deepPurple500} from 'material-ui/lib/styles/colors';
 
 import getMuiTheme from 'material-ui/lib/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/lib/MuiThemeProvider';
@@ -24,7 +24,7 @@ const styles = {
 
 const muiTheme = getMuiTheme({
     palette: {
-        accent1Color: deepOrange500,
+        accent1Color: deepPurple500,
     },
 });
 

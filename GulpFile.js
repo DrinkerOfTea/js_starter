@@ -3,44 +3,77 @@
  */
 // Imports
 var gulp = require('gulp');
+var gutil = require('gulp-util');
 var eslint = require('gulp-eslint');
 var browserify = require('browserify');
+var watchify = require('watchify');
 var source = require('vinyl-source-stream');
 var uglify = require('gulp-uglify');
-var rename = require('gulp-rename');
-var derequire = require('gulp-derequire');
-var streamify = require('gulp-streamify');
 var del = require('del');
-var browserSync = require('browser-sync').create();
 var less = require('gulp-less');
-var merge = require('merge2');
 var babelify = require('babelify');
 var runSequence = require('run-sequence');
 
 // Linting task
 gulp.task('eslint', function () {
-    return gulp.src(['app/**/*.js', 'GulpFile.js', 'karma.conf.js', '!node_modules/**'])
-        .pipe(eslint())
-        .pipe(eslint.format())
-        .pipe(eslint.failAfterError());
+    return gulp.src(['app/**/*.js', 'app/**/*.jsx', 'GulpFile.js', 'karma.conf.js', '!node_modules/**'])
+        .pipe(eslint()).pipe(eslint.format()).pipe(eslint.failOnError());
 });
 
 // Clean dist directory task - only do so if there are no ESLint errors
-gulp.task('clean', ['eslint'], function() {
+gulp.task('clean', function() {
     return del(['dist/*']);
 });
 
-// Create a standalone JS file from all the JS files, converting from ES2015 JavaScript with Babel
-gulp.task('bundle', function() {
-    var b = browserify('app/js/app.jsx', {entries: 'app/js/app.jsx', extensions: ['.jsx']}).transform(babelify.configure({presets: ["es2015", "react"]}));
-    b.bundle().pipe(source('app.js')).pipe(gulp.dest('dist/js'));
+/**
+ * Bundle the JavaScript files into a single js file, including translation from ES2015.
+ * @param {boolean} Whether to watch the Javascript files and re-bundle if they change
+ */
+var bundle = function bundle(watch) {
+
+    //Set up browserify, to run on JS and JSX files, including watchify plugin to rerun when files change
+    var b = watchify(browserify('app/js/app.jsx',
+        {
+            entries     : 'app/js/app.jsx',
+            extensions  : ['.jsx'],
+            cache       : {},
+            packageCache: {},
+        }).
+        transform(babelify.configure({
+            presets: ["es2015", "react"]
+        })), { poll: true});
+
+    var doBundling = function doBundling() {
+        b.bundle().pipe(source('app.js')).pipe(gulp.dest('dist/js'));
+        gutil.log('Bundling complete');
+    };
+
+    //If in watch mode trigger a rebundle on file changes:
+    if(watch) {
+        b.on('update', doBundling);
+        gutil.log('Watchify watching for JS and JSX updates...');
+    }
+
+    return doBundling();
+};
+
+//Bundle but don't watch (only do after the JS files have been linted):
+gulp.task('bundle', ['eslint'], function() {
+    return bundle(false);
+});
+
+//Bundle and watch:
+gulp.task('bundle-watch', function() {
+    return bundle(true);
 });
 
 // Copy over the HTML files
-gulp.task('copy', function() {
-    var html = gulp.src('app/index.html').pipe(gulp.dest('dist'));
-    var fonts = gulp.src('node_modules/roboto-fontface/fonts/*.*').pipe(gulp.dest('./dist/fonts'));
-    return merge(html, fonts);
+gulp.task('copy-html', function() {
+   return gulp.src('app/index.html').pipe(gulp.dest('dist'));
+});
+
+gulp.task('copy-fonts', function() {
+    return gulp.src('node_modules/roboto-fontface/fonts/*.*').pipe(gulp.dest('./dist/fonts'));
 });
 
 gulp.task('less', function () {
@@ -49,36 +82,30 @@ gulp.task('less', function () {
         .pipe(gulp.dest('dist/css'));
 });
 
-// Perform all the build tasks in parallel - bundle, copy HTML and compile CSS
-gulp.task('build', ['eslint'], function() {
+//Run a full build, including bundling, copying files and CSS compilation (without watching)
+gulp.task('full-build', ['bundle', 'copy-html', 'copy-fonts', 'less']);
+
+//Run a full clean and build (without watching)
+gulp.task('full-clean-build', ['clean'], function() {
     return runSequence(
-        ['bundle', 'less']
+        ['full-build']
     );
 });
 
-gulp.task('clean-build', ['clean'], function() {
-    runSequence(
-        ['copy', 'bundle', 'less']
-    );
+// Default task - run a full build, then watch for changes:
+gulp.task('default', ['copy-html', 'copy-fonts', 'less', 'bundle-watch'], function() {
+
+    //Note: watchify in bundle-watch task will already recompile JavaScript whenever it changes.
+
+    //Watch HTML file and copy it to the dist if it changes:
+    gulp.watch('app/**/*.html', ['copy-html']);
+
+    //Watch less files and run less if it changes:
+    gulp.watch('app/less/**/**', ['less']);
+
+    //Watch JavaScript and JSX files and lint them if the change:
+    gulp.watch(['app/**/*.js', 'app/**/*.jsx', 'GulpFile.js', 'karma.conf.js', '!node_modules/**'], ['eslint']);
+
+    gutil.log(gutil.colors.green('Build complete - watching for changes...'));
 });
-
-// Browser-sync watch
-gulp.task('js-watch', ['build'], browserSync.reload);
-
-// use default task to launch Browsersync and watch JS files
-gulp.task('serve', ['clean-build'], function () {
-
-    // Serve files from the root of this project
-    browserSync.init({
-        server: {
-            baseDir: "./dist/"
-        }
-    });
-
-    // Watch for any changes
-    gulp.watch(["app/**/**", "GulpFile.js"], ['js-watch']);
-});
-
-// Default task - build:
-gulp.task('default', ['clean-build']);
 
