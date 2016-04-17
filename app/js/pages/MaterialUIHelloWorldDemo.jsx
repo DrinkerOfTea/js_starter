@@ -7,7 +7,7 @@ import RaisedButton from 'material-ui/lib/raised-button';
 import FlatButton from 'material-ui/lib/flat-button';
 import Dialog from 'material-ui/lib/dialog';
 
-class Page1 extends React.Component {
+class MaterialUIHelloWorldDemo extends React.Component {
 
     constructor(props, context) {
         super(props, context);
@@ -41,9 +41,9 @@ class Page1 extends React.Component {
         );
 
         return (
-            <div className="page1">
-                <h1>Page 1</h1>
-                <p>This page shows a couple of example Material-UI components. Click the raised button to get a dialog.</p>
+            <div className="material-ui-hello-world-demo">
+                <h1>Material UI Hello World</h1>
+                <p>This page shows a couple of example Material-UI components, and demonstrates the theme working. Click the raised button to get a dialog.</p>
                 <Dialog
                     open={this.state.open}
                     title="Super Secret Password"
@@ -63,4 +63,4 @@ class Page1 extends React.Component {
     }
 }
 
-export default Page1;
+export default MaterialUIHelloWorldDemo;

@@ -44,7 +44,15 @@ var bundle = function bundle(watch) {
         })), { poll: true});
 
     var doBundling = function doBundling() {
-        b.bundle().pipe(source('app.js')).pipe(gulp.dest('dist/js'));
+        b.bundle().on('error', function(error){
+            if (error instanceof SyntaxError) {
+                gutil.log(gutil.colors.red('Syntax Error:'));
+                gutil.log(gutil.colors.red(error.message));
+                gutil.log(gutil.colors.red(error.codeFrame));
+            } else {
+                gutil.log(gutil.colors.red('Error:', error.message));
+            }
+        }).pipe(source('app.js')).pipe(gulp.dest('dist/js'));
         gutil.log('Bundling complete');
     };
 

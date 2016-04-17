@@ -17,12 +17,11 @@ class Home extends React.Component {
         return (
             <div className="home">
                 <h1>Welcome to Starter App</h1>
-                <p>Components are great</p>
+                <p>Please select a demo from the menui above</p>
 
                 <div style={styles.testArea}>
 
                 </div>
-
 
             </div>
         );
