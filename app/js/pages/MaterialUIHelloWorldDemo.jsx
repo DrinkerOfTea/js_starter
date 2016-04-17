@@ -41,7 +41,7 @@ class MaterialUIHelloWorldDemo extends React.Component {
         );
 
         return (
-            <div className="page1">
+            <div className="material-ui-hello-world-demo">
                 <h1>Material UI Hello World</h1>
                 <p>This page shows a couple of example Material-UI components, and demonstrates the theme working. Click the raised button to get a dialog.</p>
                 <Dialog

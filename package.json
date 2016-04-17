@@ -21,8 +21,10 @@
     "material-ui": "^0.14.4",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
+    "react-redux": "^4.4.5",
     "react-router": "2.0.1",
     "react-tap-event-plugin": "^0.2.2",
+    "redux": "^3.4.0",
     "roboto-fontface": "^0.4.5"
   },
   "devDependencies": {
@@ -46,6 +48,7 @@
     "karma-chai": "^0.1.0",
     "karma-mocha": "^0.2.2",
     "karma-sinon": "^1.0.4",
+    "mocha": "^2.4.5",
     "run-sequence": "^1.1.5",
     "sinon": "^1.17.3",
     "vinyl-source-stream": "^1.1.0",

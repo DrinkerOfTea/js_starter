@@ -23,7 +23,7 @@ const styles = {
         textAlign: 'left',
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'flex-start'
+        alignItems: 'flex-s'
     }
 };
 
@@ -58,6 +58,7 @@ class Main extends React.Component {
                            <NavLink to="/" onlyActiveOnIndex><MenuItem primaryText="Home" /></NavLink>
                            <NavLink to="/material-ui-hello-world"><MenuItem primaryText="Material UI Hello World" /></NavLink>
                            <NavLink to="/filterable-selection-list"><MenuItem primaryText="React Filterable Selection List" /></NavLink>
+                           <NavLink to="/to-do"><MenuItem primaryText="Redux To Do List" /></NavLink>
                         </IconMenu>
                     }
                 />

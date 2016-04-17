@@ -6,6 +6,7 @@ import Main from './Main'; // Our custom react component
 import Home from './pages/Home';
 import MaterialUIHelloWorldDemo from './pages/MaterialUIHelloWorldDemo';
 import FilterableSelectionListDemo from './pages/FilterableSelectionListDemo';
+import ToDoListDemo from './pages/ToDoListDemo';
 
 //Needed for onTouchTap
 //Can go away when react 1.0 release
@@ -21,6 +22,7 @@ ReactDOM.render(
             <IndexRoute component={Home}/>
             <Route path="/material-ui-hello-world" component={MaterialUIHelloWorldDemo}/>
             <Route path="/filterable-selection-list" component={FilterableSelectionListDemo}/>
+            <Route path="/to-do" component={ToDoListDemo}/>
         </Route>
     </Router>,
     document.getElementById('app')
