@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
 import Todo from './Todo'
+import {List} from 'immutable'
 
 const TodoList = ({ todos, onTodoClick }) => (
   <ul>
@@ -14,11 +15,7 @@ const TodoList = ({ todos, onTodoClick }) => (
 )
 
 TodoList.propTypes = {
-  todos: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    completed: PropTypes.bool.isRequired,
-    text: PropTypes.string.isRequired
-  }).isRequired).isRequired,
+  todos: PropTypes.object.isRequired,
   onTodoClick: PropTypes.func.isRequired
 }
 
