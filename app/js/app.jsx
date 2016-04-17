@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import MaterialUIHelloWorldDemo from './pages/MaterialUIHelloWorldDemo';
 import FilterableSelectionListDemo from './pages/FilterableSelectionListDemo';
 import ToDoListDemo from './pages/ToDoListDemo';
+import NoughtsAndCrossesDemo from './pages/NoughtsAndCrossesDemo';
 
 //Needed for onTouchTap
 //Can go away when react 1.0 release
@@ -23,6 +24,7 @@ ReactDOM.render(
             <Route path="/material-ui-hello-world" component={MaterialUIHelloWorldDemo}/>
             <Route path="/filterable-selection-list" component={FilterableSelectionListDemo}/>
             <Route path="/to-do" component={ToDoListDemo}/>
+            <Route path="/noughts-and-crosses" component={NoughtsAndCrossesDemo}/>
         </Route>
     </Router>,
     document.getElementById('app')
