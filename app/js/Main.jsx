@@ -59,6 +59,7 @@ class Main extends React.Component {
                            <NavLink to="/material-ui-hello-world"><MenuItem primaryText="Material UI Hello World" /></NavLink>
                            <NavLink to="/filterable-selection-list"><MenuItem primaryText="React Filterable Selection List" /></NavLink>
                            <NavLink to="/to-do"><MenuItem primaryText="Redux To Do List" /></NavLink>
+                           <NavLink to="/noughts-and-crosses"><MenuItem primaryText="Noughts and Crosses" /></NavLink>
                         </IconMenu>
                     }
                 />
