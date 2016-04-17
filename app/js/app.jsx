@@ -4,8 +4,8 @@ import { Router, Route, hashHistory, IndexRoute } from 'react-router'
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import Main from './Main'; // Our custom react component
 import Home from './pages/Home';
-import Page1 from './pages/Page1';
-import Page2 from './pages/Page2';
+import MaterialUIHelloWorldDemo from './pages/MaterialUIHelloWorldDemo';
+import FilterableSelectionListDemo from './pages/FilterableSelectionListDemo';
 
 //Needed for onTouchTap
 //Can go away when react 1.0 release
@@ -19,8 +19,8 @@ ReactDOM.render(
     <Router history={hashHistory}>
         <Route path="/" component={Main}>
             <IndexRoute component={Home}/>
-            <Route path="/page1" component={Page1}/>
-            <Route path="/page2" component={Page2}/>
+            <Route path="/material-ui-hello-world" component={MaterialUIHelloWorldDemo}/>
+            <Route path="/filterable-selection-list" component={FilterableSelectionListDemo}/>
         </Route>
     </Router>,
     document.getElementById('app')

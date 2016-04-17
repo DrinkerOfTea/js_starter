@@ -5,11 +5,14 @@
 import React from 'react';
 
 import Countries from '../models/Countries';
-import FilterableSelectionList from '../components/FilterableSelectionList';
+import FilterableSelectionList from '../components/filterableselectionlist/FilterableSelectionList';
 
 const countries = Countries.getCountries();
 
 const styles = {
+    demo: {
+        minWidth: 1000
+    },
     sandbox: {
         width: 400,
         height: 600,
@@ -20,12 +23,12 @@ const styles = {
     }
 }
 
-class Page2 extends React.Component {
+class FilterableSelectionListDemo extends React.Component {
 
     render() {
         return (
-            <div className="page2">
-                <h1>Page 2</h1>
+            <div className="filterable-selection-list-demo" style={styles.demo}>
+                <h1>Filterable Selection List Demo</h1>
                 <p>Filterable selection list:</p>
 
                 <div className="sandbox" style={styles.sandbox}>
@@ -36,4 +39,4 @@ class Page2 extends React.Component {
     }
 }
 
-export default Page2;
+export default FilterableSelectionListDemo;

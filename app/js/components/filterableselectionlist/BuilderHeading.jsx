@@ -3,9 +3,9 @@
  */
 
 import React from 'react';
-import ImageNavigateNext from 'material-ui/lib/svg-icons/image/navigate-next';
+import ImageNavigateNext from '../../../../node_modules/material-ui/lib/svg-icons/image/navigate-next';
 
-import AppTheme from '../themes/AppTheme.jsx';
+import AppTheme from '../../themes/AppTheme.jsx';
 
 /**
  * Styles for the component

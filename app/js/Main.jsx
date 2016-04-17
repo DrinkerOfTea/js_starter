@@ -20,7 +20,10 @@ import NavLink from "./NavLink.js";
 
 const styles = {
     container: {
-        textAlign: 'left'
+        textAlign: 'left',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'flex-start'
     }
 };
 
@@ -53,8 +56,8 @@ class Main extends React.Component {
                                </IconButton>
                            } role="nav">
                            <NavLink to="/" onlyActiveOnIndex><MenuItem primaryText="Home" /></NavLink>
-                           <NavLink to="/page1"><MenuItem primaryText="Page 1" /></NavLink>
-                           <NavLink to="/page2"><MenuItem primaryText="Page 2" /></NavLink>
+                           <NavLink to="/material-ui-hello-world"><MenuItem primaryText="Material UI Hello World" /></NavLink>
+                           <NavLink to="/filterable-selection-list"><MenuItem primaryText="React Filterable Selection List" /></NavLink>
                         </IconMenu>
                     }
                 />

@@ -5,13 +5,13 @@
 import React from 'react';
 
 import BuilderHeading from './BuilderHeading';
-import List from 'material-ui/lib/lists/list';
-import ListItem from 'material-ui/lib/lists/list-item';
-import Checkbox from 'material-ui/lib/checkbox';
-import Search from 'material-ui/lib/svg-icons/action/search';
-import TextField from 'material-ui/lib/text-field';
+import List from '../../../../node_modules/material-ui/lib/lists/list';
+import ListItem from '../../../../node_modules/material-ui/lib/lists/list-item';
+import Checkbox from '../../../../node_modules/material-ui/lib/checkbox';
+import Search from '../../../../node_modules/material-ui/lib/svg-icons/action/search';
+import TextField from '../../../../node_modules/material-ui/lib/text-field';
 import _ from 'lodash';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+//import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 /**
  * Styles for the component
@@ -137,7 +137,6 @@ class FilterableSelectionList extends React.Component {
 
         return (
 
-
             <div className="filterableSelectionList" style={styles.main}>
                 <BuilderHeading headingSections={["Restrictions", "Nationalities"]} />
                 <div style={styles.header}>
@@ -148,6 +147,7 @@ class FilterableSelectionList extends React.Component {
                         {listItems}
                 </List>
             </div>
+
         );
     }
 }
