@@ -21,7 +21,7 @@ class ToDoListDemo extends React.Component {
     render() {
         return (
             <div className="to-do-demo">
-                <p>Demo of the Todo application from the <a href="#">Redux tutorial</a>.</p>
+                <p>Demo of the Todo application from the <a href="http://redux.js.org/docs/introduction/Examples.html">Redux tutorial</a>.</p>
                 <Provider store={store}>
                     <ToDoListApp />
                 </Provider>

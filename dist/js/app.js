@@ -1353,7 +1353,7 @@ var ToDoListDemo = function (_React$Component) {
                     'Demo of the Todo application from the ',
                     _react2.default.createElement(
                         'a',
-                        { href: '#' },
+                        { href: 'http://redux.js.org/docs/introduction/Examples.html' },
                         'Redux tutorial'
                     ),
                     '.'
