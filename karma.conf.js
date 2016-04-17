@@ -4,13 +4,18 @@
  * @param config
  */
 
+/**
+ * Node: Need to install globally:
+ * npm install -g karma, browserify, watchify, karma-browserify
+ */
+
 module.exports = function (config) {
     'use strict';
     config.set({
 
         basePath: '',
 
-        frameworks: ['mocha', 'chai'],
+        frameworks: ['mocha', 'chai', 'browserify'],
 
         files: [
             'test/*.spec.js'
@@ -29,7 +34,16 @@ module.exports = function (config) {
 
         browsers: ['PhantomJS'],
 
-        plugins: [ 'karma-mocha', 'karma-chai', 'karma-phantomjs-launcher']
+        plugins: [ 'karma-mocha', 'karma-chai', 'karma-browserify', 'karma-phantomjs-launcher'],
+
+        preprocessors: {
+            'test/**/*.js': ['browserify']
+        },
+
+        browserify: {
+            debug: true,
+            transform: ['babelify']
+        }
 
     });
 };
