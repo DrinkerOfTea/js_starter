@@ -1,6 +1,6 @@
 import React from 'react';
 import AppTheme from '../../../themes/AppTheme.jsx';
-import RaisedButton from '../../../../../node_modules/material-ui/lib/raised-button';
+import RaisedButton from 'material-ui/RaisedButton/RaisedButton';
 
 const styles = {
     board: {

@@ -3,7 +3,7 @@
  */
 
 import React from 'react';
-import ImageNavigateNext from '../../../../node_modules/material-ui/lib/svg-icons/image/navigate-next';
+import ImageNavigateNext from 'material-ui/svg-icons/image/navigate-next';
 
 import AppTheme from '../../themes/AppTheme.jsx';
 

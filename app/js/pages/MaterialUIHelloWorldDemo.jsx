@@ -3,9 +3,9 @@
  */
 
 import React from 'react';
-import RaisedButton from 'material-ui/lib/raised-button';
-import FlatButton from 'material-ui/lib/flat-button';
-import Dialog from 'material-ui/lib/dialog';
+import RaisedButton from 'material-ui/RaisedButton/RaisedButton';
+import FlatButton from 'material-ui/FlatButton/FlatButton';
+import Dialog from 'material-ui/Dialog/Dialog';
 
 class MaterialUIHelloWorldDemo extends React.Component {
 

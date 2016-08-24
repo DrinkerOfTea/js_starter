@@ -5,11 +5,11 @@
 import React from 'react';
 
 import BuilderHeading from './BuilderHeading';
-import List from '../../../../node_modules/material-ui/lib/lists/list';
-import ListItem from '../../../../node_modules/material-ui/lib/lists/list-item';
-import Checkbox from '../../../../node_modules/material-ui/lib/checkbox';
-import Search from '../../../../node_modules/material-ui/lib/svg-icons/action/search';
-import TextField from '../../../../node_modules/material-ui/lib/text-field';
+import List from 'material-ui/List/List';
+import ListItem from 'material-ui/List/ListItem';
+import Checkbox from 'material-ui/Checkbox/Checkbox';
+import Search from 'material-ui/svg-icons/action/search';
+import TextField from 'material-ui/TextField/TextField';
 import _ from 'lodash';
 //import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 

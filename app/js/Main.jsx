@@ -3,16 +3,16 @@
  */
 
 import React from 'react';
-import {deepPurple500} from 'material-ui/lib/styles/colors';
+import {deepPurple500} from 'material-ui/styles/colors';
 
-import getMuiTheme from 'material-ui/lib/styles/getMuiTheme';
-import ThemeManager from 'material-ui/lib/styles/theme-manager';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import ThemeManager from 'material-ui/styles/themeManager';
 
-import AppBar from 'material-ui/lib/app-bar';
-import IconButton from 'material-ui/lib/icon-button';
-import NavigationMenuIcon from 'material-ui/lib/svg-icons/navigation/menu';
-import IconMenu from 'material-ui/lib/menus/icon-menu';
-import MenuItem from 'material-ui/lib/menus/menu-item';
+import AppBar from 'material-ui/AppBar/AppBar';
+import IconButton from 'material-ui/IconButton/IconButton';
+import NavigationMenuIcon from 'material-ui/svg-icons/navigation/menu';
+import IconMenu from 'material-ui/IconMenu/IconMenu';
+import MenuItem from 'material-ui/MenuItem/MenuItem';
 
 import AppTheme from './themes/AppTheme';
 
